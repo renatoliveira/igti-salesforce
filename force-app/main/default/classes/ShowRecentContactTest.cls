@@ -15,16 +15,10 @@ private class ShowRecentContactTest {
         );
         insert c;
 
-        c = [
-            SELECT Id, LastModifiedDate
-            FROM Contact
-            WHERE Id = :c.Id
-        ];
-
         Test.startTest();
-        Datetime d = ShowRecentContact.getLastContact(a.Id);
+        Contact record = ShowRecentContact.getLastContact(a.Id);
         Test.stopTest();
 
-        System.assertEquals(d, c.LastModifiedDate, 'As datas de última modificação devem ser iguais.');
+        System.assertEquals(record.Id, c.Id, 'Deveria ter buscado o registro de contato.');
     }
 }
