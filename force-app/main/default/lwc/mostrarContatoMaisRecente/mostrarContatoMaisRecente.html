@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Recent contact" icon-name="standard:contact">
+        <div class="slds-m-around_medium">
+            <template if:true={loading}>
+                <p>Loading...</p>
+            </template>
+            <template if:false={loading}>
+                <template if:true={hasContact}>
+                    <p>Last contact made <lightning-relative-date-time value={lastTime}></lightning-relative-date-time>.</p>
+                </template>
+                <template if:false={hasContact}>
+                    <p>No contacts for this account.</p>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>
