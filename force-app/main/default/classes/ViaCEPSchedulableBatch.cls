@@ -32,6 +32,8 @@ public without sharing class ViaCEPSchedulableBatch implements Schedulable, Data
         for (Account record : (List<Account>) scope) {
             record.Description = String.format('Atualizado em {0}', new List<String>{ now.format() });
         }
+
+        Database.update(scope, false);
     }
 
     /**
