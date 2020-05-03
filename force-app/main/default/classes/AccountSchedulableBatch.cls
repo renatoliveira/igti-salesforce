@@ -3,7 +3,7 @@
  * Quando seu agendamento for executado, a classe agendará a si própria.
  * A plataforma, executará então os métodos de contexto de processamento em lotes (batches).
  */
-public without sharing class ViaCEPSchedulableBatch implements Schedulable, Database.Batchable<SObject> {
+public without sharing class AccountSchedulableBatch implements Schedulable, Database.Batchable<SObject> {
 
     /**
      * Método obrigatório da interface Schedulable.
